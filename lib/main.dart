@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:products_showcase/screens/explore_screen.dart';
+import 'package:products_showcase/screens/prices_screen.dart';
 
 void main() {
   runApp(const GetMaterialApp(home: MyApp()));

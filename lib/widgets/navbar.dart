@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:products_showcase/screens/explore_screen.dart';
+import 'package:products_showcase/screens/prices_screen.dart';
 
 class NavBar extends StatelessWidget {
   const NavBar({
@@ -15,31 +18,45 @@ class NavBar extends StatelessWidget {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: const [
-            NavbarItem(
+          children: [
+            const NavbarItem(
               image: "assets/images/icons/home.png",
               label: "Home",
               color: Color(0xFF130F26),
             ),
-            NavbarItem(
-              image: "assets/images/icons/explore.png",
-              label: "Explore",
-              color: Color(0xFFF15223),
+            InkWell(
+              onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ExploreScreen(),
+                  )),
+              child: const NavbarItem(
+                image: "assets/images/icons/explore.png",
+                label: "Explore",
+                color: const Color(0xFFF15223),
+              ),
             ),
-            CircleAvatar(
-              backgroundColor: Color(0xFF040415),
-              child: Icon(Icons.add),
-              radius: 28,
+            InkWell(
+              onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => PricesPage(),
+                  )),
+              child: const CircleAvatar(
+                backgroundColor: const Color(0xFF040415),
+                child: const Icon(Icons.add),
+                radius: 28,
+              ),
             ),
-            NavbarItem(
+            const NavbarItem(
               image: "assets/images/icons/inbox.png",
               label: "inbox",
-              color: Color(0xFF130F26),
+              color: const Color(0xFF130F26),
             ),
-            NavbarItem(
+            const NavbarItem(
               image: "assets/images/icons/cart.png",
               label: "Shop",
-              color: Color(0xFF130F26),
+              color: const Color(0xFF130F26),
             )
           ],
         ),

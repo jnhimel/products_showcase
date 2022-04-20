@@ -75,6 +75,7 @@ flutter:
   # https://flutter.dev/assets-and-images/#from-packages
 
   assets:
+    - assets/images/
     - assets/images/icons/
 
   fonts:
